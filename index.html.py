@@ -49,13 +49,13 @@
   <h1>Attack on Titan - YouTube Episodes</h1>
 
   <iframe id="videoPlayer" 
-    src="https://www.youtube.com/embed/OEdHsZbJHrk?list=PLNcqwhPhO46GSE_1eBVzMpx4eu8NjIrG-" 
+    src="https://www.youtube.com/watch?v=OEdHsZbJHrk&list=PLNcqwhPhO46GSE_1eBVzMpx4eu8NjIrG-&ab_channel=AnimeMangaOfficial" 
     allowfullscreen 
     title="Episode 1">
   </iframe>
 
   <div class="episode-list">
-    <a class="episode-button" href="#" onclick="loadEpisode('OEdHsZbJHrk?list=PLNcqwhPhO46GSE_1eBVzMpx4eu8NjIrG-')">Episode 1</a>
+    <a class="episode-button" href="#" onclick="loadEpisode('https://www.youtube.com/watch?v=OEdHsZbJHrk&list=PLNcqwhPhO46GSE_1eBVzMpx4eu8NjIrG-&ab_channel=AnimeMangaOfficial')">Episode 1</a>
     <a class="episode-button" href="#" onclick="loadEpisode('NEXT_VIDEO_ID')">Episode 2</a>
     <a class="episode-button" href="#" onclick="loadEpisode('NEXT_VIDEO_ID_3')">Episode 3</a>
   </div>
