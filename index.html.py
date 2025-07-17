@@ -73,7 +73,7 @@ html = """
   <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" alt="Attack on Titan" />
   <p>Watch the epic story of humanity vs titans!</p>
 
-  <video id="videoPlayer" controls src="01 To You, in 2000 Years.mp4"></video>
+  <video id="videoPlayer" controls src="https://www.youtube.com/watch?v=OEdHsZbJHrk&list=PLNcqwhPhO46GSE_1eBVzMpx4eu8NjIrG-&ab_channel=AnimeMangaOfficial"></video>
 
   <div class="episode-list">
     <a class="episode-button" onclick="loadEpisode('01 To You, in 2000 Years.mp4')">Episode 1: To You, in 2000 Years</a>
