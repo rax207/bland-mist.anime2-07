@@ -46,35 +46,31 @@
   </style>
 </head>
 <body>
-  <h1>Attack on Titan </h1>
+  <h1>Attack on Titan</h1>
   <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" alt="Attack on Titan" />
-  <h1>Watch the epic story of humanity vs titans! </h1>
+  <h2>Watch the epic story of humanity vs titans!</h2>
 
-<iframe
-  src="https://drive.google.com/file/d/1ndA_70q29rQNvv-7F4Ur62fN5OKH1L_g/preview"
-  <track kind="subtitles" src="attack-on-titan-ep1.vtt" srclang="en" label="English" default>
-    Your browser does not support the video tag.
-  width="640"
-  height="360"
-  allow="autoplay"
-  allowfullscreen
-  frameborder="0"
-></iframe>
+  <iframe
+    id="videoPlayer"
+    src="https://drive.google.com/file/d/1ndA_70q29rQNvv-7F4Ur62fN5OKH1L_g/preview"
+    allow="autoplay"
+    allowfullscreen
+    frameborder="0">
+  </iframe>
 
-<div class="episode-list">
-  <a class="episode-button" href="#" onclick="loadEpisode('OEdHsZbJHrk')">Episode 1 : To You, in 2000 Years</a>
-  <a class="episode-button" href="#" onclick="loadEpisode('NEXT_VIDEO_ID_2')">Episode 2 : That Day</a>
-  <a class="episode-button" href="#" onclick="loadEpisode('NEXT_VIDEO_ID_3')">Episode 3: A Dim Light Amid Despair </a>
-</div>
+  <div class="episode-list">
+    <a class="episode-button" href="#" onclick="loadEpisode('1ndA_70q29rQNvv-7F4Ur62fN5OKH1L_g')">Episode 1</a>
+    <a class="episode-button" href="#" onclick="loadEpisode('YOUR_EP2_DRIVE_ID')">Episode 2</a>
+    <a class="episode-button" href="#" onclick="loadEpisode('YOUR_EP3_DRIVE_ID')">Episode 3</a>
+  </div>
 
   <a class="back" href="bland_mist_anime.html">🔙 Back to Home</a>
 
 <script>
-  function loadEpisode(videoId) {
-    const iframe = document.getElementById('videoPlayer');
-    iframe.src = 'https://www.youtube.com/embed/' + videoId + '?list=PLNcqwhPhO46GSE_1eBVzMpx4eu8NjIrG-';
+  function loadEpisode(fileId) {
+    document.getElementById('videoPlayer').src =
+      'https://drive.google.com/file/d/' + fileId + '/preview';
   }
 </script>
-
 </body>
 </html>
