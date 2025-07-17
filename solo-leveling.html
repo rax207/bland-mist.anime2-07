@@ -1,13 +1,9 @@
-import webbrowser
-import os
-
-html = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Solo Leveling - Episodes</title>
+  <title>Attack on Titan - YouTube Episodes</title>
   <style>
     body {
       background-color: black;
@@ -16,11 +12,14 @@ html = """
       text-align: center;
       padding: 20px;
     }
-    img {
-      width: 300px;
-      border: 2px solid red;
+    iframe {
+      width: 80%;
+      max-width: 720px;
+      height: 405px; /* 16:9 ratio */
+      border: none;
       border-radius: 10px;
-      margin-bottom: 20px;
+      box-shadow: 0 0 15px red;
+      margin-top: 20px;
     }
     .episode-list {
       margin-top: 30px;
@@ -44,42 +43,34 @@ html = """
       background-color: red;
       color: black;
     }
-    a.back {
-      display: inline-block;
-      margin-top: 40px;
-      color: red;
-      background: #1a1a1a;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 6px;
-    }
-    a.back:hover {
-      background: red;
-      color: black;
-    }
   </style>
 </head>
 <body>
-  <h1>Solo Leveling</h1>
-  <img src="https://static.wikia.nocookie.net/solo-leveling/images/7/72/Solo_Leveling_Logo.png" alt="Solo Leveling" />
-  <p>Witness Sung Jin-Woo's rise from the weakest hunter to the strongest!</p>
+  <h1>▶ Attack on Titan</h1>
+  <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" alt="Attack on Titan" />
+  <h2>Watch the epic story of humanity vs titans!</h2>
+
+  <iframe
+    id="videoPlayer"
+    src="https://www.crunchyroll.com/watch/G0DUNKQK7/if-i-had-one-more-chance"
+    allow="autoplay"
+    allowfullscreen
+    frameborder="0">
+  </iframe>
 
   <div class="episode-list">
-    <a class="episode-button" href="https://www.crunchyroll.com/watch/GQJUG34W2/im-used-to-it" target="_blank">
-      Episode 1: I'm Used to It
-    </a>
-    <a class="episode-button" href="#" target="_blank">Episode 2 (Coming Soon)</a>
-    <a class="episode-button" href="#" target="_blank">Episode 3 (Coming Soon)</a>
+    <a class="episode-button" href="#" onclick="loadEpisode('https://www.crunchyroll.com/watch/G0DUNKQK7/if-i-had-one-more-chance')">Episode 1 : To You, in 2000 Years</a>
+    <a class="episode-button" href="#" onclick="loadEpisode('')">Episode 2 : That Day</a>
+    <a class="episode-button" href="#" onclick="loadEpisode('')">Episode 3 : A Dim Light Amid Despair</a>
   </div>
 
   <a class="back" href="bland_mist_anime.html">🔙 Back to Home</a>
+
+<script>
+  function loadEpisode(fileId) {
+    document.getElementById('videoPlayer').src =
+      'https://drive.google.com/file/d/' + fileId + '/preview';
+  }
+</script>
 </body>
 </html>
-"""
-
-file_name = "solo-leveling.html"
-with open(file_name, "w", encoding="utf-8") as f:
-    f.write(html)
-
-webbrowser.open(f"file://{os.path.abspath(file_name)}")
-print("✅ Solo Leveling episode page created and opened!")
