@@ -48,23 +48,24 @@
 <body>
   <h1>Attack on Titan - YouTube Episodes</h1>
 
-  <iframe id="videoPlayer" 
-    src="https://www.youtube.com/watch?v=OEdHsZbJHrk&list=PLNcqwhPhO46GSE_1eBVzMpx4eu8NjIrG-&ab_channel=AnimeMangaOfficial" 
-    allowfullscreen 
-    title="Episode 1">
-  </iframe>
+<iframe id="videoPlayer" 
+  src="https://www.youtube.com/embed/OEdHsZbJHrk?list=PLNcqwhPhO46GSE_1eBVzMpx4eu8NjIrG-" 
+  allowfullscreen 
+  title="Episode 1">
+</iframe>
 
-  <div class="episode-list">
-    <a class="episode-button" href="#" onclick="loadEpisode('https://www.youtube.com/watch?v=OEdHsZbJHrk&list=PLNcqwhPhO46GSE_1eBVzMpx4eu8NjIrG-&ab_channel=AnimeMangaOfficial')">Episode 1</a>
-    <a class="episode-button" href="#" onclick="loadEpisode('NEXT_VIDEO_ID')">Episode 2</a>
-    <a class="episode-button" href="#" onclick="loadEpisode('NEXT_VIDEO_ID_3')">Episode 3</a>
-  </div>
+<div class="episode-list">
+  <a class="episode-button" href="#" onclick="loadEpisode('OEdHsZbJHrk')">Episode 1</a>
+  <a class="episode-button" href="#" onclick="loadEpisode('NEXT_VIDEO_ID_2')">Episode 2</a>
+  <a class="episode-button" href="#" onclick="loadEpisode('NEXT_VIDEO_ID_3')">Episode 3</a>
+</div>
 
-  <script>
-    function loadEpisode(videoId) {
-      const iframe = document.getElementById('videoPlayer');
-      iframe.src = 'https://www.youtube.com/embed/' + videoId;
-    }
-  </script>
+<script>
+  function loadEpisode(videoId) {
+    const iframe = document.getElementById('videoPlayer');
+    iframe.src = 'https://www.youtube.com/embed/' + videoId + '?list=PLNcqwhPhO46GSE_1eBVzMpx4eu8NjIrG-';
+  }
+</script>
+
 </body>
 </html>
