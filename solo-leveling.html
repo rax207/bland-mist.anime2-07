@@ -1,0 +1,85 @@
+import webbrowser
+import os
+
+html = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solo Leveling - Episodes</title>
+  <style>
+    body {
+      background-color: black;
+      color: red;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    img {
+      width: 300px;
+      border: 2px solid red;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .episode-list {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .episode-button {
+      background: #1a1a1a;
+      color: red;
+      padding: 10px 15px;
+      border: 2px solid red;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+    .episode-button:hover {
+      background-color: red;
+      color: black;
+    }
+    a.back {
+      display: inline-block;
+      margin-top: 40px;
+      color: red;
+      background: #1a1a1a;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+    a.back:hover {
+      background: red;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <h1>Solo Leveling</h1>
+  <img src="https://static.wikia.nocookie.net/solo-leveling/images/7/72/Solo_Leveling_Logo.png" alt="Solo Leveling" />
+  <p>Witness Sung Jin-Woo's rise from the weakest hunter to the strongest!</p>
+
+  <div class="episode-list">
+    <a class="episode-button" href="https://www.crunchyroll.com/watch/GQJUG34W2/im-used-to-it" target="_blank">
+      Episode 1: I'm Used to It
+    </a>
+    <a class="episode-button" href="#" target="_blank">Episode 2 (Coming Soon)</a>
+    <a class="episode-button" href="#" target="_blank">Episode 3 (Coming Soon)</a>
+  </div>
+
+  <a class="back" href="bland_mist_anime.html">🔙 Back to Home</a>
+</body>
+</html>
+"""
+
+file_name = "solo-leveling.html"
+with open(file_name, "w", encoding="utf-8") as f:
+    f.write(html)
+
+webbrowser.open(f"file://{os.path.abspath(file_name)}")
+print("✅ Solo Leveling episode page created and opened!")
