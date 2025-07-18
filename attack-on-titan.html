@@ -3,33 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Attack on Titan - Mixed Episodes</title>
+  <title>Attack on Titan - Vimeo Episodes</title>
   <style>
     body {
-      background: black;
+      background-color: black;
       color: red;
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
       padding: 20px;
     }
-    video, iframe {
+    iframe {
       width: 80%;
       max-width: 720px;
-      height: 405px;
+      height: 405px; /* 16:9 ratio */
       border: none;
       border-radius: 10px;
       box-shadow: 0 0 15px red;
       margin-top: 20px;
-      background: black;
     }
-    .controls, .episode-list {
+    .episode-list {
+      margin-top: 30px;
       display: flex;
       justify-content: center;
-      margin: 15px 0;
-      gap: 10px;
+      gap: 15px;
       flex-wrap: wrap;
     }
-    button, .episode-button {
+    .episode-button {
       background: #1a1a1a;
       color: red;
       padding: 10px 15px;
@@ -40,61 +39,55 @@
       transition: 0.3s;
       text-decoration: none;
     }
-    button:hover, .episode-button:hover {
+    .episode-button:hover {
+      background-color: red;
+      color: black;
+    }
+    a.back {
+      display: inline-block;
+      margin-top: 40px;
+      color: red;
+      background: #1a1a1a;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+    a.back:hover {
       background: red;
       color: black;
     }
   </style>
 </head>
 <body>
+  <h1>▶ Attack on Titan</h1>
+  <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" alt="Attack on Titan" />
+  <h2>Watch the epic story of humanity vs titans!</h2>
 
-  <h1>▶ Attack on Titan – Episodes</h1>
-
-  <!-- Default player: Vimeo (EP1) -->
-  <div id="playerContainer">
-    <iframe
-      id="vimeoPlayer"
-      src="https://player.vimeo.com/video/1102173987"
-      allow="autoplay; fullscreen"
-      allowfullscreen>
-    </iframe>
-  </div>
+  <iframe
+    id="videoPlayer"
+    src="https://player.vimeo.com/video/1102173987"
+    allow="autoplay; fullscreen"
+    allowfullscreen
+    frameborder="0">
+  </iframe>
 
   <div class="episode-list">
-    <a class="episode-button" onclick="loadEpisode('1102173987')">Episode 1</a>
-    <a class="episode-button" onclick="loadEpisode('1102491761')">Episode 2</a>
-    <a class="episode-button" onclick="loadEpisode('1102494646')">Episode 3</a>
-    <a class="episode-button" onclick="loadEpisode('1102487519')">Episode 4</a>
-    <a class="episode-button" onclick="loadEpisode('1102493211')">Episode 5</a>
-    <a class="episode-button" onclick="loadEpisode('1102488053')">Episode 6</a>
-    <a class="episode-button" onclick="loadEpisode('1102486713')">Episode 7</a>
-    <a class="episode-button" onclick="loadEpisode('1102488999')">Episode 8</a>
+    <a class="episode-button" href="#" onclick="loadEpisode('1102173987')">Episode 1</a>
+    <a class="episode-button" href="#" onclick="loadEpisode('1102491761')">Episode 2</a>
+    <a class="episode-button" href="#" onclick="loadEpisode('1102494646')">Episode 3</a>
+    <a class="episode-button" href="#" onclick="loadEpisode('1102487519')">Episode 4</a>
+    <a class="episode-button" href="#" onclick="loadEpisode('1102493211')">Episode 5</a>
+    <a class="episode-button" href="#" onclick="loadEpisode('1102488053')">Episode 6</a>
+    <a class="episode-button" href="#" onclick="loadEpisode('1102486713')">Episode 7</a>
+    <a class="episode-button" href="#" onclick="loadEpisode('1102488999')">Episode 8</a>
   </div>
 
-  <a href="bland_mist_anime.html" style="color:red; text-decoration:none; font-size:1.1rem;">🔙 Back to Home</a>
+  <a class="back" href="bland_mist_anime.html">🔙 Back to Home</a>
 
 <script>
-  const vimeo = document.getElementById("vimeoPlayer");
-  const drive = document.getElementById("drivePlayer");
-
-  function loadEpisode(type, id) {
-    if (type === "vimeo") {
-      vimeo.style.display = "block";
-      drive.style.display = "none";
-      vimeo.src = "https://player.vimeo.com/video/" + id;
-    } else {
-      vimeo.style.display = "none";
-      drive.style.display = "block";
-      drive.src = "https://drive.google.com/uc?export=download&id=" + id;
-    }
-  }
-
-  function skip(sec) {
-    if (drive.style.display === "block") {
-      drive.currentTime += sec;
-    } else {
-      alert("⏩ Skip only works on Google Drive episodes!");
-    }
+  function loadEpisode(videoId) {
+    document.getElementById('videoPlayer').src =
+      'https://player.vimeo.com/video/' + videoId;
   }
 </script>
 
