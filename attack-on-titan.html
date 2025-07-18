@@ -3,34 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Attack on Titan - Episode 1 (Vimeo)</title>
-
-  <!-- Video.js + Vimeo Plugin -->
-  <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
-  <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/videojs-vimeo@2/dist/videojs-vimeo.js"></script>
-
+  <title>Attack on Titan - Mixed Episodes</title>
   <style>
     body {
-      background-color: black;
+      background: black;
       color: red;
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
       padding: 20px;
     }
-    .video-js {
+    video, iframe {
       width: 80%;
       max-width: 720px;
-      margin: 0 auto;
+      height: 405px;
+      border: none;
+      border-radius: 10px;
       box-shadow: 0 0 15px red;
+      margin-top: 20px;
+      background: black;
     }
-    .controls {
+    .controls, .episode-list {
       display: flex;
       justify-content: center;
       margin: 15px 0;
       gap: 10px;
+      flex-wrap: wrap;
     }
-    .controls button {
+    button, .episode-button {
       background: #1a1a1a;
       color: red;
       padding: 10px 15px;
@@ -39,8 +38,9 @@
       cursor: pointer;
       font-size: 1rem;
       transition: 0.3s;
+      text-decoration: none;
     }
-    .controls button:hover {
+    button:hover, .episode-button:hover {
       background: red;
       color: black;
     }
@@ -48,30 +48,63 @@
 </head>
 <body>
 
-  <h1>▶ Attack on Titan – Episode 1</h1>
+  <h1>▶ Attack on Titan – Episodes</h1>
 
-  <video
-    id="vimeoPlayer"
-    class="video-js vjs-big-play-centered"
-    controls
-    data-setup='{"techOrder":["vimeo"], "sources":[{ "type": "video/vimeo", "src": "https://vimeo.com/1102173987"}]}'
-  ></video>
+  <!-- Default player: Vimeo (EP1) -->
+  <div id="playerContainer">
+    <iframe
+      id="vimeoPlayer"
+      src="https://player.vimeo.com/video/1102173987"
+      allow="autoplay; fullscreen"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <video id="drivePlayer" style="display:none;" controls></video>
 
   <div class="controls">
     <button onclick="skip(-10)">⏪ Back 10s</button>
     <button onclick="skip(10)">⏩ Forward 10s</button>
   </div>
 
+  <div class="episode-list">
+    <a class="episode-button" onclick="loadEpisode('vimeo','1102173987')">Episode 1 : To You, in 2000 Years</a>
+    <a class="episode-button" onclick="loadEpisode('drive','1cogQqpPAffCvvSdzHE48qz1PTORRQVgk')">Episode 2 : That Day</a>
+    <a class="episode-button" onclick="loadEpisode('drive','1jJa_UwKn_cjP-tXFQvSEMHy1Ijn933jd')">Episode 3 : A Dim Light Amid Despair</a>
+    <a class="episode-button" onclick="loadEpisode('drive','1rN4rb6bZwEHgfOCdMhsGZXu0W61RlH86')">Episode 4 : The Night of the Closing Ceremony</a>
+    <a class="episode-button" onclick="loadEpisode('drive','1g7_nWJfuPXkzfKtk6TC3VwLEhai5Xd_i')">Episode 5 : First Battle</a>
+    <a class="episode-button" onclick="loadEpisode('drive','11KR8QropPP6M-_4HZ1NejevyHc8gD-RO')">Episode 6 : The World They Saw</a>
+    <a class="episode-button" onclick="loadEpisode('drive','1tHgqOoaXQ_sfBydXQoAYGtCQl8u_B-Q4')">Episode 7 : Small Blade</a>
+    <a class="episode-button" onclick="loadEpisode('drive','1GZ5fRAYR5DUrT7KCOEmfZZMh9EjML346')">Episode 8 : I Can Hear His Heartbeat</a>
+
+  </div>
+
   <a href="bland_mist_anime.html" style="color:red; text-decoration:none; font-size:1.1rem;">🔙 Back to Home</a>
 
-  <script>
-    const player = videojs('vimeoPlayer');
+<script>
+  const vimeo = document.getElementById("vimeoPlayer");
+  const drive = document.getElementById("drivePlayer");
 
-    function skip(sec) {
-      const current = player.currentTime();
-      player.currentTime(current + sec);
+  function loadEpisode(type, id) {
+    if (type === "vimeo") {
+      vimeo.style.display = "block";
+      drive.style.display = "none";
+      vimeo.src = "https://player.vimeo.com/video/" + id;
+    } else {
+      vimeo.style.display = "none";
+      drive.style.display = "block";
+      drive.src = "https://drive.google.com/uc?export=download&id=" + id;
     }
-  </script>
+  }
+
+  function skip(sec) {
+    if (drive.style.display === "block") {
+      drive.currentTime += sec;
+    } else {
+      alert("⏩ Skip only works on Google Drive episodes!");
+    }
+  }
+</script>
 
 </body>
 </html>
