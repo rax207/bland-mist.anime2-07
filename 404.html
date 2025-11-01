@@ -8,23 +8,26 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: green;  /* Page background */
-      color: red;               /* Theme color */
-      font-family: Arial, sans-serif;
+      background-color: #000000;  /* Black background */
+      color: #00FF00;             /* Bright green theme */
+      font-family: 'Arial', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
     }
+
     header {
       width: 100%;
       padding: 20px;
-      background-color: darkgreen;
+      background-color: #111111;  /* Dark black header */
       text-align: center;
       font-size: 2em;
       font-weight: bold;
-      color: red;
+      color: #00FF00;            /* Bright green header text */
+      text-shadow: 1px 1px #003300;
     }
+
     main {
       flex: 1;
       display: flex;
@@ -32,20 +35,32 @@
       justify-content: center;
       align-items: center;
       gap: 20px;
+      text-align: center;
     }
+
     button {
-      padding: 10px 20px;
-      font-size: 1em;
-      background-color: red;
-      color: green;
+      padding: 12px 24px;
+      font-size: 1.2em;
+      background-color: #00FF00;  /* Bright green button */
+      color: #000000;             /* Black text on button */
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
-      transition: 0.3s;
+      font-weight: bold;
+      transition: all 0.3s;
     }
+
     button:hover {
-      background-color: darkred;
-      color: lightgreen;
+      background-color: #00CC00;  /* Darker green on hover */
+      transform: scale(1.05);
+    }
+
+    footer {
+      padding: 12px;
+      text-align: center;
+      color: #00FF00;
+      font-weight: bold;
+      text-shadow: 1px 1px #003300;
     }
   </style>
 </head>
@@ -54,15 +69,16 @@
 <header>CheatBD</header>
 
 <main>
-  <h1>Welcome to CheatBD</h1>
-  <p>This page uses a green background with a red theme!</p>
-  <button onclick="alert('Button clicked!')">Click Me</button>
+  <h1>Welcome to CheatBD!</h1>
+  <p>Black background with a bright green theme 🟢</p>
+  <button onclick="window.open('https://www.youtube.com/', '_blank')">Open YouTube</button>
 </main>
 
-<footer style="padding: 12px; text-align: center; color: red;">
-  &copy; 2025 CheatBD
+<footer>
+  &copy; 2025 CheatBD — Neon Green Style
 </footer>
 
 </body>
 </html>
+
 
