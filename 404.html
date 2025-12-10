@@ -38,13 +38,25 @@
       text-align: center;
     }
 
-    /* Big center photo */
-    .main-photo {
-      width: 350px;
-      max-width: 90%;
-      border-radius: 15px;
-      box-shadow: 0 0 20px #00FF00;
-    }
+/* First photo */
+.main-photo {
+  width: 650px;
+  max-width: calc(100% - 384px); /* subtract 2 inches each side */
+  margin-left: 192px;  /* 2-inch left gap */
+  margin-right: 192px; /* 2-inch right gap */
+  border-radius: 15px;
+  box-shadow: 0 0 20px #00FF00;
+}
+
+/* Second photo */
+.main-photo {
+  width: 350px;
+  max-width: 90%;
+  border-radius: 15px;
+  margin: 20px 0;
+  box-shadow: 0 0 15px #00FF00;
+}
+
 
     button {
       padding: 12px 24px;
@@ -96,5 +108,6 @@
 
 </body>
 </html>
+
 
 
