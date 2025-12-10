@@ -1,49 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CheatBD</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #000000;
-      color: #00FF00;
-      font-family: 'Arial', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-    }
-
-    header {
-      width: 100%;
-      padding: 20px;
-      background-color: #111111;
-      text-align: center;
-      font-size: 2em;
-      font-weight: bold;
-      color: #00FF00;
-      text-shadow: 1px 1px #003300;
-    }
-
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      text-align: center;
-    }
-
-/* First photo */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CheatBD</title>
 <style>
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: #00FF00;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  padding: 20px;
+  background-color: #111111;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  color: #00FF00;
+  text-shadow: 1px 1px #003300;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
 
 /* First photo (BIG) */
 .photo-big {
-  width: 650px;          /* Change this value anytime */
+  width: 650px;  /* Change this to make bigger/smaller */
   max-width: 95%;
   border-radius: 15px;
   box-shadow: 0 0 20px #00FF00;
@@ -59,35 +56,31 @@
   box-shadow: 0 0 15px #00FF00;
 }
 
+button {
+  padding: 12px 24px;
+  font-size: 1.2em;
+  background-color: #00FF00;
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: #00CC00;
+  transform: scale(1.05);
+}
+
+footer {
+  padding: 12px;
+  text-align: center;
+  color: #00FF00;
+  font-weight: bold;
+  text-shadow: 1px 1px #003300;
+}
 </style>
-
-
-
-    button {
-      padding: 12px 24px;
-      font-size: 1.2em;
-      background-color: #00FF00;
-      color: #000000;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: all 0.3s;
-    }
-
-    button:hover {
-      background-color: #00CC00;
-      transform: scale(1.05);
-    }
-
-    footer {
-      padding: 12px;
-      text-align: center;
-      color: #00FF00;
-      font-weight: bold;
-      text-shadow: 1px 1px #003300;
-    }
-  </style>
 </head>
 <body>
 
@@ -97,30 +90,21 @@
   <h1>Welcome to CheatBD!</h1>
   <p>Buy Our Panels</p>
 
-  <!-- BIG center photo -->
-<img src="Theme.jpg" class="photo-big">
-<img src="Lv.1.jpg" class="main-photo">
+  <!-- First BIG photo -->
+  <img src="Theme.jpg" class="photo-big">
 
+  <!-- Second SMALLER photo -->
+  <img src="Lv.1.jpg" class="main-photo">
 
+  <!-- Download Button -->
   <a href="CheatBD.zip" download>
-  <button>🔥Buy CheatBD LV.-1🔥</button>
-</a>
-
+    <button>🔥Buy CheatBD LV.-1🔥</button>
   </a>
 </main>
 
 <footer>
-  &copy; -----2025 CheatBD — Ctreated By Rifat For Cheat Panels-------
+  &copy; -----2025 CheatBD — Created By Rifat For Cheat Panels-------
 </footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
