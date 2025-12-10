@@ -180,10 +180,10 @@ document.getElementById("chat-btn").onclick = () => {
   box.style.display = box.style.display === "none" ? "block" : "none";
 };
 
-// Safe AI call via server
+// Safe AI call via Replit server
 async function sendToAI(message) {
   try {
-    const res = await fetch("http://localhost:3000/chat", {
+    const res = await fetch("https://open-ai-express-chat--tanvir040579.replit.app/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message })
@@ -213,6 +213,8 @@ document.getElementById("chat-send").onclick = async () => {
 
 </body>
 </html>
+
+
 
 
 
